@@ -1,0 +1,109 @@
+/* static/css/styles.css */
+:root {
+    /* Основные цвета */
+    --primary: #1A3C6D;
+    --secondary: #F28C6F;
+    --accent: #2ECC71;
+
+    /* Текст */
+    --text-primary: #333333;
+    --text-secondary: #6B7280;
+
+    /* Фоны */
+    --bg-main: #F5F3EE;
+    --bg-card: #FFFFFF;
+    --bg-hover: #355DA8;
+
+    /* Состояния */
+    --success: #2ECC71;
+    --error: #EF4444;
+    --warning: #F59E0B;
+    --disabled: #D1D5DB;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.card, .table {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--bg-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #D9775F; /* Заменено darken для CSS */
+    border-color: #D9775F;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #FFFFFF;
+}
+
+.btn-accent:hover {
+    background-color: #27AE60; /* Заменено darken */
+    border-color: #27AE60;
+}
+
+.alert-success {
+    background-color: var(--success);
+    color: #FFFFFF;
+}
+
+.alert-danger {
+    background-color: var(--error);
+    color: #FFFFFF;
+}
+
+.alert-warning {
+    background-color: var(--warning);
+    color: #FFFFFF;
+}
+
+.form-control {
+    border: 1px solid var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-control:disabled {
+    background-color: var(--disabled);
+    border-color: var(--disabled);
+    color: var(--text-secondary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--bg-hover);
+    color: #FFFFFF;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: #27AE60; /* Заменено darken */
+}

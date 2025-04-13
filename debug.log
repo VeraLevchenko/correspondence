@@ -1,0 +1,162 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Starting email processing for unread messages in INBOX...
+Created Incoming record for email from =?utf-8?Q?GeekBrains?= <noreply@e.geekbrains.ru>
+Marked email b'2149' as read.
+Created Incoming record for email from =?utf-8?Q?GeekSchool?= <noreply@e.geekbrains.ru>
+Marked email b'2150' as read.
+Created Incoming record for email from <inform.gpn-rp@gazprom-neft.ru>
+Marked email b'2152' as read.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Created Incoming record for email from inform.gpn-rp@gazprom-neft.ru
+Marked email b'2147' as read.
+Created Incoming record for email from Zapier Alerts
+Marked email b'2151' as read.
+Created Incoming record for email from inform.gpn-rp@gazprom-neft.ru
+Marked email b'2152' as read.
+Finished email processing.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: registry/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\project_Python\correspondence\registry\views.py", line 58, in incoming_list
+    return render(request, 'registry/incoming_list.html', {
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: registry/base.html
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Created Incoming record for email from kontrol@admnkz.info
+Marked email b'2144' as read.
+Created Incoming record for email from Госуслуги
+Marked email b'2145' as read.
+Finished email processing.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\project_Python\correspondence\registry\views.py", line 86, in incoming_create
+    form = IncomingForm()
+  File "D:\project_Python\correspondence\registry\forms.py", line 30, in __init__
+    max_number = Incoming.objects.aggregate(models.Max('incoming_number'))['incoming_number__max']
+NameError: name 'models' is not defined
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\project_Python\correspondence\registry\views.py", line 86, in incoming_create
+    form = IncomingForm()
+  File "D:\project_Python\correspondence\registry\forms.py", line 30, in __init__
+    max_number = Incoming.objects.aggregate(models.Max('incoming_number'))['incoming_number__max']
+NameError: name 'models' is not defined
+D:\project_Python\correspondence\registry\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+D:\project_Python\correspondence\registry\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\correspondence\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader

@@ -1,0 +1,118 @@
+<!-- registry/templates/registry/incoming_list.html -->
+{% extends 'registry/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="display-4 fw-bold">Входящая корреспонденция</h1>
+    <div class="d-flex align-items-center gap-3">
+        {% if user.is_authenticated %}
+            <span class="text-primary">Привет, {{ user.username }}!</span>
+            <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm">Выйти</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Войти</a>
+        {% endif %}
+    </div>
+</div>
+
+{% if user.is_authenticated %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <a href="{% url 'incoming_create' %}" class="btn btn-primary">Создать</a>
+    <div class="d-flex gap-2">
+        <button type="submit" form="filter-form" class="btn btn-secondary">Применить фильтры</button>
+        <a href="{% url 'incoming_list' %}" class="btn btn-accent">Сбросить фильтр</a>
+    </div>
+</div>
+<form method="get" id="filter-form">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    №
+                    <input type="text" name="number_filter" value="{{ number_filter|default_if_none:'' }}" class="form-control mt-2" placeholder="Фильтр по номеру">
+                </th>
+                <th scope="col">
+                    Дата
+                    <div class="d-flex gap-2 mt-2">
+                        <input type="date" name="date_from" value="{{ date_from|default_if_none:'' }}" class="form-control" placeholder="От">
+                        <input type="date" name="date_to" value="{{ date_to|default_if_none:'' }}" class="form-control" placeholder="До">
+                    </div>
+                </th>
+                <th scope="col">
+                    Заявитель
+                    <input type="text" name="q" value="{{ query|default_if_none:'' }}" class="form-control mt-2" placeholder="Фильтр по заявителю">
+                </th>
+                <th scope="col">
+                    Краткое содержание
+                    <input type="text" name="summary_filter" value="{{ summary_filter|default_if_none:'' }}" class="form-control mt-2" placeholder="Фильтр по содержанию">
+                </th>
+                <th scope="col">
+                    Ответственный
+                    <input type="text" name="responsible_filter" value="{{ responsible_filter|default_if_none:'' }}" class="form-control mt-2" placeholder="Фильтр по ответственному">
+                </th>
+                <th scope="col">
+                    Срок ответа
+                    <div class="d-flex gap-2 mt-2">
+                        <input type="date" name="deadline_from" value="{{ deadline_from|default_if_none:'' }}" class="form-control" placeholder="От">
+                        <input type="date" name="deadline_to" value="{{ deadline_to|default_if_none:'' }}" class="form-control" placeholder="До">
+                    </div>
+                </th>
+                <th scope="col">
+                    Вложение
+                    <select name="attachment_filter" class="form-select mt-2">
+                        <option value="" {% if not attachment_filter %}selected{% endif %}>Все</option>
+                        <option value="yes" {% if attachment_filter == 'yes' %}selected{% endif %}>Есть</option>
+                        <option value="no" {% if attachment_filter == 'no' %}selected{% endif %}>Нет</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for incoming in page_obj %}
+            <tr class="data-row" onclick="window.location='{% url 'incoming_detail' incoming.pk %}'">
+                <td>{{ incoming.incoming_number|default:"—" }}</td>
+                <td>{{ incoming.incoming_date|date:"d.m.Y" }}</td>
+                <td>{{ incoming.applicant }}</td>
+                <td class="summary-column">{{ incoming.summary|truncatewords:20 }}</td>
+                <td>{{ incoming.responsible|default:"—" }}</td>
+                <td>{{ incoming.response_deadline|date:"d.m.Y" }}</td>
+                <td class="attachment-column">
+                    {% if incoming.attachment %}
+                        <a href="{{ incoming.attachment.url }}" class="btn btn-secondary btn-sm" target="_blank">Скачать</a>
+                    {% else %}
+                        —
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">Записи отсутствуют</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}&q={{ query|urlencode }}&date_from={{ date_from|urlencode }}&date_to={{ date_to|urlencode }}&responsible_filter={{ responsible_filter|urlencode }}&number_filter={{ number_filter|urlencode }}&summary_filter={{ summary_filter|urlencode }}&deadline_from={{ deadline_from|urlencode }}&deadline_to={{ deadline_to|urlencode }}&attachment_filter={{ attachment_filter|urlencode }}">« Назад</a>
+            </li>
+        {% endif %}
+        <li class="page-item disabled">
+            <span class="page-link">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+        </li>
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}&q={{ query|urlencode }}&date_from={{ date_from|urlencode }}&date_to={{ date_to|urlencode }}&responsible_filter={{ responsible_filter|urlencode }}&number_filter={{ number_filter|urlencode }}&summary_filter={{ summary_filter|urlencode }}&deadline_from={{ deadline_from|urlencode }}&deadline_to={{ deadline_to|urlencode }}&attachment_filter={{ attachment_filter|urlencode }}">Вперед »</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+{% else %}
+<div class="text-center">
+    <p class="lead">Пожалуйста, <a href="{% url 'login' %}">войдите</a>, чтобы просмотреть записи.</p>
+</div>
+{% endif %}
+{% endblock %}

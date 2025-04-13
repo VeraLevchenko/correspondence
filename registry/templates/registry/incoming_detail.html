@@ -1,0 +1,29 @@
+<!-- registry/templates/registry/incoming_detail.html -->
+{% extends 'registry/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="display-4 fw-bold mb-4">Детали записи</h1>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p class="mb-2"><strong>№:</strong> {{ incoming.incoming_number }}</p>
+        <p class="mb-2"><strong>Дата:</strong> {{ incoming.incoming_date|date:"d.m.Y" }}</p>
+        <p class="mb-2"><strong>Заявитель:</strong> {{ incoming.applicant }}</p>
+        <p class="mb-2"><strong>Краткое содержание:</strong> {{ incoming.summary }}</p>
+        <p class="mb-2"><strong>Ответственный:</strong> {{ incoming.responsible }}</p>
+        <p class="mb-2"><strong>Срок ответа:</strong> {{ incoming.response_deadline|date:"d.m.Y" }}</p>
+        <p class="mb-2"><strong>Вложение:</strong>
+            {% if incoming.attachment %}
+                <a href="{{ incoming.attachment.url }}" class="btn btn-secondary btn-sm" target="_blank">Скачать</a>
+            {% else %}
+                —
+            {% endif %}
+        </p>
+        <div class="d-flex gap-2 mt-4">
+            <a href="{% url 'incoming_update' incoming.pk %}" class="btn btn-primary">Редактировать</a>
+            <a href="{% url 'incoming_delete' incoming.pk %}" class="btn btn-accent">Удалить</a>
+            <a href="{% url 'incoming_list' %}" class="btn btn-secondary">Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

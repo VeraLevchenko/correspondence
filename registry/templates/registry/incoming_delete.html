@@ -1,0 +1,19 @@
+<!-- registry/templates/registry/incoming_delete.html -->
+{% extends 'registry/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="display-4 fw-bold mb-4">Удалить запись</h1>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p>Вы уверены, что хотите удалить запись №{{ incoming.incoming_number }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-accent">Удалить</button>
+                <a href="{% url 'incoming_list' %}" class="btn btn-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
