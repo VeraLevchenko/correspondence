@@ -1,6 +1,6 @@
-# registry/models.py (полная версия)
+# registry/models.py
 from django.db import models
-from django.db.models import Max  # Добавлен импорт
+from django.db.models import Max
 from django.utils import timezone
 
 class Incoming(models.Model):
@@ -10,10 +10,9 @@ class Incoming(models.Model):
     summary = models.TextField()
     responsible = models.CharField(max_length=100)
     response_deadline = models.DateField()
-    attachment = models.FileField(upload_to='attachments/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        if not self.incoming_number:  # Генерация только если номер не указан
+        if not self.incoming_number:
             max_number = Incoming.objects.aggregate(Max('incoming_number'))['incoming_number__max']
             self.incoming_number = (max_number or 0) + 1
         super().save(*args, **kwargs)
@@ -23,3 +22,11 @@ class Incoming(models.Model):
 
     class Meta:
         ordering = ['-incoming_date', '-incoming_number']
+
+class Attachment(models.Model):
+    incoming = models.ForeignKey(Incoming, on_delete=models.CASCADE, related_name='attachments')
+    file = models.FileField(upload_to='attachments/')
+    filename = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.filename or self.file.name

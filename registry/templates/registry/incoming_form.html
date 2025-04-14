@@ -48,10 +48,17 @@
                 {{ form.response_deadline }}
             </div>
             <div class="mb-3">
-                <label for="{{ form.attachment.id_for_label }}" class="form-label">Вложение</label>
-                {{ form.attachment }}
-                {% if form.instance.attachment %}
-                    <p class="mt-2"><small>Текущее вложение: <a href="{{ form.instance.attachment.url }}" target="_blank">{{ form.instance.attachment.name }}</a></small></p>
+                <label class="form-label">Вложения</label>
+                <!-- Множественные поля для загрузки файлов -->
+                <input type="file" name="attachments" class="form-control" multiple>
+                <small class="form-text text-muted">Выберите один или несколько файлов.</small>
+                {% if form.instance.pk and form.instance.attachments.exists %}
+                    <p class="mt-2"><small>Текущие вложения:</small></p>
+                    <ul>
+                        {% for attachment in form.instance.attachments.all %}
+                            <li><a href="{{ attachment.file.url }}" target="_blank">{{ attachment.filename }}</a></li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
             </div>
             <div class="d-flex gap-2">

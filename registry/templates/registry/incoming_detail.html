@@ -12,9 +12,13 @@
         <p class="mb-2"><strong>Краткое содержание:</strong> {{ incoming.summary }}</p>
         <p class="mb-2"><strong>Ответственный:</strong> {{ incoming.responsible }}</p>
         <p class="mb-2"><strong>Срок ответа:</strong> {{ incoming.response_deadline|date:"d.m.Y" }}</p>
-        <p class="mb-2"><strong>Вложение:</strong>
-            {% if incoming.attachment %}
-                <a href="{{ incoming.attachment.url }}" class="btn btn-secondary btn-sm" target="_blank">Скачать</a>
+        <p class="mb-2"><strong>Вложения:</strong>
+            {% if incoming.attachments.exists %}
+                <ul>
+                    {% for attachment in incoming.attachments.all %}
+                        <li><a href="{{ attachment.file.url }}" class="btn btn-secondary btn-sm" target="_blank">{{ attachment.filename }}</a></li>
+                    {% endfor %}
+                </ul>
             {% else %}
                 —
             {% endif %}

@@ -21,37 +21,28 @@ def incoming_list(request):
     deadline_to = request.GET.get('deadline_to', '')
     attachment_filter = request.GET.get('attachment_filter', '')
 
-    # Сортировка по incoming_number по убыванию
     incoming = Incoming.objects.all().order_by('-incoming_number')
 
     if query:
-        print(f"Filtering applicant with query: '{query}'")
         incoming = incoming.filter(applicant__icontains=query)
-
     if date_from:
         incoming = incoming.filter(incoming_date__gte=date_from)
     if date_to:
         incoming = incoming.filter(incoming_date__lte=date_to)
-
     if responsible_filter:
-        print(f"Filtering responsible with query: '{responsible_filter}'")
         incoming = incoming.filter(responsible__icontains=responsible_filter)
-
     if number_filter:
         incoming = incoming.filter(incoming_number=number_filter)
-
     if summary_filter:
         incoming = incoming.filter(summary__icontains=summary_filter)
-
     if deadline_from:
         incoming = incoming.filter(response_deadline__gte=deadline_from)
     if deadline_to:
         incoming = incoming.filter(response_deadline__lte=deadline_to)
-
     if attachment_filter == 'yes':
-        incoming = incoming.filter(attachment__isnull=False)
+        incoming = incoming.filter(attachments__isnull=False).distinct()
     elif attachment_filter == 'no':
-        incoming = incoming.filter(attachment__isnull=True)
+        incoming = incoming.filter(attachments__isnull=True)
 
     paginator = Paginator(incoming, 10)
     page_number = request.GET.get('page')

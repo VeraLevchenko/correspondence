@@ -89,7 +89,7 @@ Finished email processing.
 Starting email processing for unread messages in INBOX...
 Created Incoming record for email from kontrol@admnkz.info
 Marked email b'2144' as read.
-Created Incoming record for email from Госуслуги
+Created Incoming record for email from пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Marked email b'2145' as read.
 Finished email processing.
 Watching for file changes with StatReloader
@@ -159,4 +159,247 @@ Watching for file changes with StatReloader
 D:\project_Python\correspondence\correspondence\settings.py changed, reloading.
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\registry\models.py changed, reloading.
+Watching for file changes with StatReloader
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000191E299DD80>> raised: ValueError("FileInput doesn't support uploading multiple files.")
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\18098\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\project_Python\correspondence\correspondence\urls.py", line 8, in <module>
+    path('', include('registry.urls')),
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\18098\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\project_Python\correspondence\registry\urls.py", line 5, in <module>
+    from registry import views
+  File "D:\project_Python\correspondence\registry\views.py", line 8, in <module>
+    from .forms import IncomingForm
+  File "D:\project_Python\correspondence\registry\forms.py", line 7, in <module>
+    class IncomingForm(forms.ModelForm):
+  File "D:\project_Python\correspondence\registry\forms.py", line 9, in IncomingForm
+    widget=forms.FileInput(attrs={'multiple': True}),
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\forms\widgets.py", line 427, in __init__
+    raise ValueError(
+ValueError: FileInput doesn't support uploading multiple files.
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000027B7A395AE0>> raised: ValueError("FileInput doesn't support uploading multiple files.")
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\18098\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\project_Python\correspondence\correspondence\urls.py", line 8, in <module>
+    path('', include('registry.urls')),
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\18098\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\project_Python\correspondence\registry\urls.py", line 5, in <module>
+    from registry import views
+  File "D:\project_Python\correspondence\registry\views.py", line 8, in <module>
+    from .forms import IncomingForm
+  File "D:\project_Python\correspondence\registry\forms.py", line 7, in <module>
+    class IncomingForm(forms.ModelForm):
+  File "D:\project_Python\correspondence\registry\forms.py", line 9, in IncomingForm
+    widget=forms.FileInput(attrs={'multiple': True}),
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\forms\widgets.py", line 427, in __init__
+    raise ValueError(
+ValueError: FileInput doesn't support uploading multiple files.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000002AFFF281F90>> raised: ModuleNotFoundError("No module named 'django_celery_beat'")
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 139, in validate_models
+    self.django_setup()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 135, in django_setup
+    django.setup()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Users\18098\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_celery_beat'
+Signal handler <promise@0x2afff22f6a0 --> <bound method Celery._autodiscover_tasks of <Celery correspondence at 0x2afff2823b0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\app\base.py", line 800, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\celery\fixups\django.py", line 111, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\apps\registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "D:\project_Python\correspondence\venv\lib\site-packages\django\apps\registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\correspondence\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\project_Python\correspondence\correspondence\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Watching for file changes with StatReloader
+Starting email processing for unread messages in INBOX...
+Failed to summarize email with g4f: No provider found for model: Model(name='gpt-3.5-turbo', base_provider='OpenAI', best_provider=None)
+Empty summary returned by g4f.
+Created Incoming record for email from JetBrains Account with summary: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ!
+
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ...
+Marked email b'2179' as read.
+Finished email processing.
+Watching for file changes with StatReloader
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Failed to summarize email with g4f: No provider found for model: Model(name='gpt-3.5-turbo', base_provider='OpenAI', best_provider=None)
+Empty summary returned by g4f.
+Finished email processing.
+Watching for file changes with StatReloader
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Failed to summarize email with g4f: No provider found for model: Model(name='gpt-3.5-turbo', base_provider='OpenAI', best_provider=None)
+Empty summary returned by g4f.
+Created Incoming record for email from JetBrains Account with summary: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ!
+
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ...
+Marked email b'2179' as read.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Attempting to summarize with model: gpt-4
+Model gpt-4 failed: 
+Attempting to summarize with model: gpt-3.5-turbo
+Model gpt-3.5-turbo failed: No provider found for model: Model(name='gpt-3.5-turbo', base_provider='OpenAI', best_provider=None)
+No suitable model found in g4f.
+Empty summary returned by g4f.
+Created Incoming record for email from JetBrains Account with summary: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ!
+
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ...
+Marked email b'2179' as read.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Attempting to summarize with model: gpt-4o-mini
+Failed to summarize email with g4f: 'str' object has no attribute 'choices'
+Empty summary returned by g4f.
+Created Incoming record for email from JetBrains Account with summary: Добрый день!
+
+Спасибо, что выбрали для разработки ...
+Marked email b'2179' as read.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+No unread emails found in INBOX.
+Finished email processing.
+Starting email processing for unread messages in INBOX...
+Attempting to summarize with model: gpt-4o-mini
+g4f returned a string instead of an object.
+Successfully generated summary with g4f.
+Created Incoming record for email from JetBrains Account with summary: Спасибо за выбор JetBrains! Мы предлагаем поддержк...
+Marked email b'2179' as read.
+Finished email processing.
 Watching for file changes with StatReloader

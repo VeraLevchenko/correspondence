@@ -58,7 +58,7 @@
                     </div>
                 </th>
                 <th scope="col">
-                    Вложение
+                    Вложения
                     <select name="attachment_filter" class="form-select mt-2">
                         <option value="" {% if not attachment_filter %}selected{% endif %}>Все</option>
                         <option value="yes" {% if attachment_filter == 'yes' %}selected{% endif %}>Есть</option>
@@ -77,8 +77,8 @@
                 <td>{{ incoming.responsible|default:"—" }}</td>
                 <td>{{ incoming.response_deadline|date:"d.m.Y" }}</td>
                 <td class="attachment-column">
-                    {% if incoming.attachment %}
-                        <a href="{{ incoming.attachment.url }}" class="btn btn-secondary btn-sm" target="_blank">Скачать</a>
+                    {% if incoming.attachments.exists %}
+                        {{ incoming.attachments.count }} вложение(й)
                     {% else %}
                         —
                     {% endif %}

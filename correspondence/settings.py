@@ -107,7 +107,7 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULE = {
     'process-emails-every-5-minutes': {
         'task': 'registry.tasks.process_emails_task',
-        'schedule': 300.0,  # Каждые 5 минут
+        'schedule': 120.0,  # Каждые 2 минуты
     },
 }
 
